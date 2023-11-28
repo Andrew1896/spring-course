@@ -1,6 +1,6 @@
-package com.zaurtregulov.spring;
+package spring_introduction;
 
-    public class Cat implements Pet {
+public class Cat implements Pet {
 
         @Override
         public void say () {

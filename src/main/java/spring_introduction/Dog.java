@@ -1,4 +1,4 @@
-package com.zaurtregulov.spring;
+package spring_introduction;
 
 public class Dog implements Pet {
     @Override
