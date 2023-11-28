@@ -1,7 +1,6 @@
-package spring_introduction;
+package com.zaurtregulov.spring;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import spring_introduction.Pet;
 
 public class Test2 {
     public static void main(String[] args) {
