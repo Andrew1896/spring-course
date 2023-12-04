@@ -16,11 +16,11 @@ public class Dog implements Pet {
         System.out.println("Bow-Wow");
     }
 
-    public void init(){
+    protected void init(){
         System.out.println("Class Dog: init method");
     }
 
-    public void destroy(){
+    private void destroy(){
         System.out.println("Class Dog: destroy method");
     }
 //
