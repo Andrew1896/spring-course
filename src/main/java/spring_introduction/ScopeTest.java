@@ -14,7 +14,7 @@ public class ScopeTest {
         System.out.println("Variabilele se bazaeaza pe unul si acelasi obiect? "
                 + (myDog == yourDog));
         System.out.println(myDog);
-        System.out.println(myDog);
+        System.out.println(yourDog);
 
                 context.close();
 
