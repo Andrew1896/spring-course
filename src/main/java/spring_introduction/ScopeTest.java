@@ -11,7 +11,6 @@ public class ScopeTest {
         Dog myDog = context.getBean("dog", Dog.class);
         Dog yourDog = context.getBean("dog", Dog.class);
 
-        System.out.println("Meow-Meow");
         System.out.println("Variabilele se bazaeaza pe unul si acelasi obiect? "
                 + (myDog == yourDog));
         System.out.println(myDog);
