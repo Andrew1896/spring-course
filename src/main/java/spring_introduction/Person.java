@@ -1,10 +1,6 @@
 package spring_introduction;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-@Component("personBean")
+//@Component("personBean")
 public class Person {
     //    @Autowired
 //    @Qualifier("cat")
@@ -15,8 +11,13 @@ public class Person {
     private int age;
 
 
-    @Autowired
-    public Person(@Qualifier("cat") Pet pet) {
+//    @Autowired
+//    public Person(@Qualifier("cat") Pet pet) {
+//        System.out.println("Person bean is created");
+//        this.pet = pet;
+//    }
+
+    public Person(Pet pet) {
         System.out.println("Person bean is created");
         this.pet = pet;
     }
