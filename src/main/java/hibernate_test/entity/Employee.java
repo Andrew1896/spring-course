@@ -1,11 +1,14 @@
 package hibernate_test.entity;
 
 
+import javax.annotation.Generated;
+
 @Entity
 @Table(name="employees")
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
