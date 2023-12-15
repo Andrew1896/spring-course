@@ -1,27 +1,25 @@
 package hibernate_test.entity;
 
 
-import javax.annotation.Generated;
-
 @Entity
-@Table(name="employees")
+@Table(name = "employees")
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="surname")
+    @Column(name = "surname")
     private String surname;
 
-    @Column(name="department")
+    @Column(name = "department")
     private String department;
 
-    @Column(name="salary")
+    @Column(name = "salary")
     private int salary;
 
     public Employee() {

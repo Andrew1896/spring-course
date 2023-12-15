@@ -8,14 +8,25 @@ public class Test1 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cgf.xml")
-                .addAnnotatedClass(hibernate_test.entity.Employee.class)
+                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
         try {
             Session session = factory.getCurrentSession();
-            hibernate_test.entity.Employee emp = new Employee("Andrei", "Cataraga", "IT", 1000);
+            Employee employee = new Employee("Andrei", "Cataraga", "IT", 500);
+            Detail detail = new Detail("Chisinau", "068157232", "andreicataraga@gmail.com");
+
+            employee.setEmpDetail(detail);
             session.beginTransaction();
-            session.save(emp);
+
+            session.set(employee);
+
+
             session.beginTransaction().commit();
+            System.out.println("Done!");
+
+
+
 
         } finally {
             factory.close();
