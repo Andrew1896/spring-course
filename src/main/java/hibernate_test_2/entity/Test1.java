@@ -14,7 +14,7 @@ public class Test1 {
 
         Session session = null;
         try {
-            // Adaugarea obiectelor in baza de date
+              // Adaugarea obiectelor in baza de date
 //            Session session = factory.getCurrentSession();
 //            Employee employee = new Employee("Andrei", "Cataraga", "IT", 500);
 //            Detail detail = new Detail("Chisinau", "068157232", "andreicataraga@gmail.com");
