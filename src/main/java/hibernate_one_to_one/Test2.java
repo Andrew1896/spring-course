@@ -1,6 +1,4 @@
-package hibernate_test_2.entity;
-
-import hibernate_test.entity.Employee;
+package hibernate_one_to_one;
 
 import javax.security.auth.login.Configuration;
 
@@ -8,8 +6,8 @@ public class Test2 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cgf.xml")
-                .addAnnotatedClass(hibernate_test_2.entity.Employee.class)
-                .addAnnotatedClass(hibernate_test_2.entity.Detail.class)
+                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
 
         Session session = null;

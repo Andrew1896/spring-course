@@ -1,4 +1,4 @@
-package hibernate_test_2.entity;
+package hibernate_one_to_one;
 
 @Entity
 @Table(name = "details")
