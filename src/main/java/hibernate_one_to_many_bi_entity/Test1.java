@@ -13,6 +13,9 @@ public class Test1 {
         try {
             Session session = factory.getCurrentSession();
             hibernate_test.entity.Employee emp = new Employee("Andrei", "Cataraga", "IT", 1000);
+            hibernate_test.entity.Employee emp = new Employee("Victor", "Punga", "HR", 1400);
+            Employee emp3 = new Employee("Ion", "Popescu", "IT", 500);
+
             session.beginTransaction();
             session.save(emp);
             session.beginTransaction().commit();
