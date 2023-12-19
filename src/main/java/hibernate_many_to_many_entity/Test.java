@@ -1,8 +1,5 @@
 package hibernate_many_to_many_entity;
 
-import hibernate_one_to_many_bi_entity.Department;
-import hibernate_test_entity.Employee;
-
 import javax.security.auth.login.Configuration;
 
 public class Test {
@@ -16,22 +13,74 @@ public class Test {
 
         Session session = null;
         try {
-            session = factory.getCurrentSession();
-            Department dep = new Department("HR", 500, 1100);
-            Employee emp1 = new Employee("Andrei", "Cataraga",  800);
-            Employee emp2= new Employee("Victor", "Punga",  1000);
+//            session = factory.getCurrentSession();
+//
+//            Section section1 = new Section("Football");
+//            Child child1 = new Child("Andrei", 7);
+//            Child child2 = new Child("Tudor", 6);
+//            Child child3 = new Child("Stefan", 8);
+//
+//            section1.addSectionToChild(child1);
+//            section1.addSectionToChild(child2);
+//            section1.addSectionToChild(child3);
+//
+//            session.beginTransaction();
+//
+//            session.save(section1);
+//
+//            session.getTransaction().commit();
+//            System.out.println("Done!!!");
+            //********************************************
 
-            dep.adEmployeeToDepartment(emp1);
-            dep.adEmployeeToDepartment(emp2;
+            session = factory.getCurrentSession();
+
+            Section section1 = new Section("Bascketball");
+            Section section2 = new Section("Chess");
+            Section section3 = new Section("Volleyball");
+
+            Child child1 = new Child("Igor", 10);
+
+            child1.addSectionToChild(section1);
+            child1.addSectionToChild(section2);
+            child1.addSectionToChild(section3);
 
             session.beginTransaction();
-            session.save(dep);
+
+            session.save(section1);
 
             session.getTransaction().commit();
-            System.out.println("Done!");
+            System.out.println("Done!!!");
+            //********************************************
 
+//            session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//
+//            Section section = session.get(Section.class, 1);
+//
+//            System.out.println(section);
+//            System.out.println(section.getChildren());
+//
+//            session.getTransaction().commit();
+//            System.out.println("Done!!!");
+            //********************************************
+
+            session = factory.getCurrentSession();
+
+            session.beginTransaction();
+
+            Child child = session.get(Child.class, 3);
+
+            System.out.println(child);
+            System.out.println(child.getSections());
+
+            session.getTransaction().commit();
+            System.out.println("Done!!!");
+
+        } finally {
+            session.close();
+            factory.close();
         }
-        finally {
 
     }
 }
