@@ -1,6 +1,6 @@
 package hibernate_one_to_one;
 
-import hibernate_test.entity.Employee;
+import hibernate_test_entity.Employee;
 
 import javax.security.auth.login.Configuration;
 

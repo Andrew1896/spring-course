@@ -1,8 +1,8 @@
-package hibernate_test.entity;
+package hibernate_test_entity;
 
 import javax.security.auth.login.Configuration;
 
-public class Test3 {
+public class Test5 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cgf.xml")
@@ -11,13 +11,12 @@ public class Test3 {
         try {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
+//            Employee emp = session.get(Employee.class, 1);
+//            session.delete(emp);
 
-            List<Employee> emps = session.createQuery("from Employee" +
-                            "where name = 'Alexandr' AND salary>650")
-                    .getResultList();
+            session.createQuery("delete Employee" +
+                    "where firstName = 'Alexandr'").executeUpdate();
 
-            for (Employee e : emps)
-                System.out.println(e);
 
             session = getTransaction().commit();
 
