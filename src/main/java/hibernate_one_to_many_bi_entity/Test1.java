@@ -56,7 +56,7 @@ public class Test1 {
             Session session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Department department = session.get(Employee.class, 1);
+            Department department = session.get(Department.class, 1);
 
             session.delete(employee);
 
