@@ -135,6 +135,18 @@ public class Test {
             session.getTransaction().commit();
             System.out.println("Done!!!");
 
+
+            session = factory.getCurrentSession();
+
+            session.beginTransaction();
+
+            Section section = session.get(Section.class, 7);
+            session.delete(section);
+
+            session.getTransaction().commit();
+            System.out.println("Done!!!");
+
+
         }
         finally {
             session.close();
