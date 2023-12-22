@@ -14,7 +14,7 @@ public class Section {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "child_section"
             , joinColumns = @JoinColumn(name = "section_id")
             , inverseJoinColumns = @JoinColumn(name = "child_id"))
