@@ -1,7 +1,5 @@
 package spring_introduction;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 //@Component
 public class Dog implements Pet {

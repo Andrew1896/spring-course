@@ -2,8 +2,8 @@ package hibernate_many_to_many_entity;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
-import javax.security.auth.login.Configuration;
 
 public class Test {
 
@@ -23,9 +23,9 @@ public class Test {
             Child child2 = new Child("Tudor", 6);
             Child child3 = new Child("Stefan", 8);
 
-            section1.addSectionToChild(child1);
-            section1.addSectionToChild(child2);
-            section1.addSectionToChild(child3);
+            section1.addChildToSection(child1);
+            section1.addChildToSection(child2);
+            section1.addChildToSection(child3);
 
             session.beginTransaction();
 

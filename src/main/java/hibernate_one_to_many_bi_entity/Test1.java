@@ -1,8 +1,9 @@
 package hibernate_one_to_many_bi_entity;
 
-import hibernate_test_entity.Employee;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
-import javax.security.auth.login.Configuration;
 
 public class Test1 {
     public static void main(String[] args) {
@@ -44,7 +45,7 @@ public class Test1 {
 //            System.out.println("Uploading our employees");
 //            department.getEmps().get(0);
 //
-//            session.beginTransaction().commit();
+//            session.getTransaction().commit();
 //
 //            System.out.println("Show employees of the department");
 //            System.out.println(department.getEmps());
@@ -59,7 +60,7 @@ public class Test1 {
 //            System.out.println(employee);
 //            System.out.println(department.getDepartment());
 //
-//            session.beginTransaction().commit();
+//            session.getTransaction().commit();
 //            System.out.println("Done!");
 
 //            ****************************************
@@ -68,10 +69,10 @@ public class Test1 {
 
             session.beginTransaction();
             Department department = session.get(Department.class, 1);
-
+            Employee employee = department.getEmps().get(0);
             session.delete(employee);
 
-            session.beginTransaction().commit();
+            session.getTransaction().commit();
             System.out.println("Done!");
 
         } finally {

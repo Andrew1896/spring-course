@@ -1,6 +1,10 @@
 package hibernate_test_entity;
 
-import javax.security.auth.login.Configuration;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import java.util.List;
 
 public class Test3 {
     public static void main(String[] args) {
@@ -19,7 +23,7 @@ public class Test3 {
             for (Employee e : emps)
                 System.out.println(e);
 
-            session = getTransaction().commit();
+            session.getTransaction().commit();
 
             System.out.println("Done!");
 

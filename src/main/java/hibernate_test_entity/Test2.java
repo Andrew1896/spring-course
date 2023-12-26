@@ -1,6 +1,8 @@
 package hibernate_test_entity;
 
-import javax.security.auth.login.Configuration;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 public class Test2 {
     public static void main(String[] args) {
@@ -13,20 +15,19 @@ public class Test2 {
             Employee emp = new Employee("Andrei", "Cataraga", "IT", 1000);
             session.beginTransaction();
             session.save(emp);
-            session.beginTransaction().commit();
+            session.getTransaction().commit();
 
             int myID = emp.getId();
             session = factory.getCurrentSession();
-            session = beginTransaction();
+            session.beginTransaction();
             Employee employee = session.get(Employee.class, myID);
-            session = getTransaction().commit();
+            session.getTransaction().commit();
             System.out.println(employee);
 
 
             System.out.println("Done!");
 
-        }
-        finally {
+        } finally {
             factory.close();
         }
     }

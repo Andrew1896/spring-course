@@ -27,17 +27,15 @@ public class Section {
     public Section() {
     }
 
-    public Section(int id, String name) {
+    public Section(String name) {
         this.name = name;
     }
 
-    public void addSectionToChild(Section section) {
+    public void addChildToSection(Child child) {
         if (children == null) {
             children = new ArrayList<>();
-
         }
         children.add(child);
-
     }
 
     public int getId() {

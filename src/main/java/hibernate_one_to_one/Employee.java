@@ -1,5 +1,5 @@
 package hibernate_one_to_one;
-
+import javax.persistence.*;
 
 @Entity
 @Table(name="employees")
@@ -23,7 +23,7 @@ public class Employee {
     private int salary;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColoumn(name = "details_id")
+//    @JoinColoumn(name = "details_id")
     private Detail empDetail;
 
     public Employee() {

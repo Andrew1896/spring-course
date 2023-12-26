@@ -1,6 +1,9 @@
 package hibernate_one_to_one;
 
-import javax.security.auth.login.Configuration;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 public class Test2 {
     public static void main(String[] args) {
@@ -22,7 +25,7 @@ public class Test2 {
 //
 //            session.set(employee);
 //
-//            session.beginTransaction().commit();
+//            session.getTransaction().commit();
 //            System.out.println("Done!");
 
 
@@ -33,7 +36,7 @@ public class Test2 {
             System.out.println(detail.getEmployee());
 
 
-            session.beginTransaction().commit();
+            session.getTransaction().commit();
             System.out.println("Done!");
 
         }

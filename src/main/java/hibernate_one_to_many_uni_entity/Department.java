@@ -1,8 +1,6 @@
 package hibernate_one_to_many_uni_entity;
 
-
-import hibernate_one_to_many_bi_entity.Employee;
-
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +33,8 @@ public class Department {
         this.minSalary = minSalary;
     }
 
-    public  void adEmployeeToDepartment(Employee employee){
-        if (emps = null){
+    public void adEmployeeToDepartment(Employee employee) {
+        if (emps == null) {
             emps = new ArrayList<>();
         }
         emps.add(employee);

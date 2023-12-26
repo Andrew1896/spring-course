@@ -1,5 +1,5 @@
 package hibernate_one_to_many_bi_entity;
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "employees")

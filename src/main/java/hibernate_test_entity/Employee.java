@@ -1,5 +1,5 @@
 package hibernate_test_entity;
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "employees")

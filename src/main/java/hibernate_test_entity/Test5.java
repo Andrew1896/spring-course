@@ -1,6 +1,8 @@
 package hibernate_test_entity;
 
-import javax.security.auth.login.Configuration;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 public class Test5 {
     public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class Test5 {
                     "where firstName = 'Alexandr'").executeUpdate();
 
 
-            session = getTransaction().commit();
+            session.getTransaction().commit();
 
             System.out.println("Done!");
 
