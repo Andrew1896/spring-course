@@ -1,6 +1,8 @@
 package hibernate_many_to_many_entity;
 
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "children")
@@ -33,7 +35,7 @@ public class Child {
 
     public void addSectionToChild(Section section){
         if (sections == null) {
-            sections = new ArrayList<>()
+            sections = new ArrayList<>();
         }
         sections.add(section);
     }

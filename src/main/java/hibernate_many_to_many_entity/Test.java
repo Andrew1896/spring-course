@@ -1,5 +1,8 @@
 package hibernate_many_to_many_entity;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 import javax.security.auth.login.Configuration;
 
 public class Test {

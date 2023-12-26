@@ -1,5 +1,7 @@
 package hibernate_one_to_one;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name = "details")
 public class Detail {

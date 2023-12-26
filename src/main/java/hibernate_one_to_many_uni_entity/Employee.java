@@ -3,6 +3,8 @@ package hibernate_one_to_many_uni_entity;
 
 import hibernate_one_to_many_bi_entity.Department;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name = "employees")
 public class Employee {
