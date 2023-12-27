@@ -3,7 +3,7 @@ package hibernate_one_to_one;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "details")
+@Table(name = "details_one_to_one")
 public class Detail {
 
     @Id
@@ -20,8 +20,8 @@ public class Detail {
     @Column(name="email")
     private String email;
 
-//    @OneToOne(mappedBy = "empDetail", cascade = CascadeType.ALL);
-    private  Employee employee;
+    @OneToOne(mappedBy = "empDetail", cascade = CascadeType.ALL)
+    private Employee employee;
 
     public Detail() {
     }

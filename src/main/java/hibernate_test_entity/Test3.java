@@ -9,7 +9,7 @@ import java.util.List;
 public class Test3 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
-                .configure("hibernate.cgf.xml")
+                .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
         try {

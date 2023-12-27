@@ -1,59 +1,67 @@
 package hibernate_one_to_one;
 
-import hibernate_test_entity.Employee;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import java.util.List;
+
 
 public class Test1 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
-                .configure("hibernate.cgf.xml")
+                .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
-
-        Session session = null;
+        Session session = factory.getCurrentSession();
         try {
-              // Adaugarea obiectelor in baza de date
-//            Session session = factory.getCurrentSession();
-//            Employee employee = new Employee("Andrei", "Cataraga", "IT", 500);
-//            Detail detail = new Detail("Chisinau", "068157232", "andreicataraga@gmail.com");
-//
-//            employee.setEmpDetail(detail);
+//            Employee employee = new Employee("Zaur", "Trigulov", "IT", 500);
+//            Detail details = new Detail("Baku", "07954875", "zaurtrigulov@gmail.com");
+//            employee.setEmpDetail(details);
 //            session.beginTransaction();
-//
-//            session.set(employee);
-//
-//
+//            session.save(employee);
 //            session.getTransaction().commit();
 //            System.out.println("Done!");
-
-
-              // Obtinea obiectelor din baza de date
+//
 //            session = factory.getCurrentSession();
-//
-//            session.beginTransaction();
-//            Employee emp = session.get(Employee.class, 10);
-//            System.out.println(emp.getEmpDetail());
-//
-//
+//            Employee employee1 = new Employee("Elena", "Mihailov", "HR", 650);
+//            Detail details1 = new Detail("Roma", "068746594", "elena@gmail.com");
+//            employee1.setEmpDetail(details1);
+            session.beginTransaction();
+//            session.save(employee1);
 //            session.getTransaction().commit();
 //            System.out.println("Done!");
 
+            // Assuming you have a Hibernate Session object named 'session'
+            Query<Employee> query = session.createQuery("from Employee", Employee.class);
+            List<Employee> employees = query.getResultList();
 
-            // Eliminarea obiectelor din baza de date
+            for (Employee emplo : employees) {
+                System.out.println(emplo);
+            }
+
             session = factory.getCurrentSession();
-
-            session.beginTransaction();
-            Employee emp = session.get(Employee.class, 2);
-            session.delete(emp);
-
+//            session.beginTransaction();
+            Employee employee2 = session.get(Employee.class, 9);
+            System.out.println(employee2.getEmpDetail());
             session.getTransaction().commit();
             System.out.println("Done!");
 
+//            session = factory.getCurrentSession();
+//            session.beginTransaction();
+//            Detail details2 = session.get(Detail.class, 3);
+//            session.delete(details2);
+//            session.getTransaction().commit();
+//            System.out.println("Done!");
 
+            session = factory.getCurrentSession();
+            session.beginTransaction();
+            Employee employee = session.get(Employee.class, 9);
+            session.delete(employee);
+            session.getTransaction().commit();
+            System.out.println("Done!");
         } finally {
             session.close();
             factory.close();
