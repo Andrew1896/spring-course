@@ -1,8 +1,8 @@
 package hibernate_many_to_many_entity;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.*;
 
 @Entity
 @Table(name = "section")
@@ -16,13 +16,12 @@ public class Section {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(name = "child_section"
             , joinColumns = @JoinColumn(name = "section_id")
             , inverseJoinColumns = @JoinColumn(name = "child_id"))
-    private List<Section> sections;
-
-    private List<Child> children;
+    private List<Child> childrens;
 
     public Section() {
     }
@@ -32,10 +31,10 @@ public class Section {
     }
 
     public void addChildToSection(Child child) {
-        if (children == null) {
-            children = new ArrayList<>();
+        if (childrens == null) {
+            childrens = new ArrayList<>();
         }
-        children.add(child);
+        childrens.add(child);
     }
 
     public int getId() {
@@ -55,11 +54,11 @@ public class Section {
     }
 
     public List<Child> getChildren() {
-        return children;
+        return childrens;
     }
 
     public void setChildren(List<Child> children) {
-        this.children = children;
+        this.childrens = children;
     }
 
     @Override
