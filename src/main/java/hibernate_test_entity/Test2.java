@@ -24,10 +24,9 @@ public class Test2 {
             session.getTransaction().commit();
             System.out.println(employee);
 
-
             System.out.println("Done!");
-
-        } finally {
+        }
+        finally {
             factory.close();
         }
     }

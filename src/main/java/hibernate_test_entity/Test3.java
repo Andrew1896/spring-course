@@ -21,12 +21,11 @@ public class Test3 {
 
             for (Employee e : emps)
                 System.out.println(e);
-
             session.getTransaction().commit();
 
             System.out.println("Done!");
-
-        } finally {
+        }
+        finally {
             factory.close();
         }
     }

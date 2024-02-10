@@ -1,6 +1,5 @@
 package hibernate_one_to_many_uni_entity;
 
-
 import javax.persistence.*;
 
 @Entity

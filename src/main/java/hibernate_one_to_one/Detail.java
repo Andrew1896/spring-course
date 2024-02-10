@@ -20,7 +20,7 @@ public class Detail {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(mappedBy = "empDetail", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "empDetail", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     private Employee employee;
 
     public Detail() {

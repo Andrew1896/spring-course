@@ -23,8 +23,8 @@ public class Test5 {
 
             session.getTransaction().commit();
             System.out.println("Done!");
-
-        } finally {
+        }
+        finally {
             factory.close();
         }
     }

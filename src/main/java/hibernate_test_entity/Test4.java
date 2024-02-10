@@ -20,8 +20,8 @@ public class Test4 {
 
             session.getTransaction().commit();
             System.out.println("Done!");
-
-        } finally {
+        }
+        finally {
             factory.close();
         }
     }

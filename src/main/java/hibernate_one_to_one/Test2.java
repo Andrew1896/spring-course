@@ -16,14 +16,23 @@ public class Test2 {
         Session session = null;
         try {
 //            session = factory.getCurrentSession();
-//            Employee employee = new Employee("Tudor", "Axinte", "HR", 550);
-//            Detail detail = new Detail("Chisinau", "069157762", "tudoraxinte@gmail.com");
+//            Employee employee = new Employee("Ionut", "Ailenei", "HR", 850);
+//            Detail detail = new Detail("Iasi", "069157762", "ionut322@gmail.com");
 //
 //            employee.setEmpDetail(detail);
 //            detail.setEmployee(employee);
 //            session.beginTransaction();
+//            session.save(detail);
 //
-//            session.set(employee);
+//            session.getTransaction().commit();
+//            System.out.println("Done!");
+
+
+//            session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//            Detail detail =session.get(Detail.class, 4);
+//            System.out.println(detail.getEmployee());
 //
 //            session.getTransaction().commit();
 //            System.out.println("Done!");
@@ -33,14 +42,14 @@ public class Test2 {
 
             session.beginTransaction();
             Detail detail =session.get(Detail.class, 4);
-            System.out.println(detail.getEmployee());
-
+            detail.getEmployee().setEmpDetail(null);
+            session.delete(detail);
 
             session.getTransaction().commit();
             System.out.println("Done!");
-
         }
         finally {
+            session.close();
             factory.close();
         }
     }

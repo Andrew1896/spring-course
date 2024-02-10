@@ -15,12 +15,12 @@ public class Test1 {
         Session session = null;
         try {
 //            session = factory.getCurrentSession();
-//            Department dep = new Department("HR", 500, 1100);
-//            Employee emp1 = new Employee("Andrei", "Cataraga",  800);
-//            Employee emp2= new Employee("Victor", "Punga",  1000);
+//            Department dep = new Department("HR", 500, 1500);
+//            Employee emp1 = new Employee("Ana", "Pusca",  800);
+//            Employee emp2= new Employee("Victor", "Plop",  1000);
 //
 //            dep.adEmployeeToDepartment(emp1);
-//            dep.adEmployeeToDepartment(emp2;
+//            dep.adEmployeeToDepartment(emp2);
 //
 //            session.beginTransaction();
 //            session.save(dep);
@@ -28,11 +28,11 @@ public class Test1 {
 //            session.getTransaction().commit();
 //            System.out.println("Done!");
 
-//            ****************************************
+
 //            session = factory.getCurrentSession();
 //
 //            session.beginTransaction();
-//            Department department = session.get (Department.class, 2);
+//            Department department = session.get (Department.class, 3);
 //
 //            System.out.println(department);
 //            System.out.println(department.getEmps());
@@ -40,18 +40,18 @@ public class Test1 {
 //            session.getTransaction().commit();
 //            System.out.println("Done!");
 
+
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Department department = session.get(Department.class, 3);
-            Employee employee = department.getEmps().get(0);
-            session.delete(employee);
+            Department department = session.get(Department.class, 4);
+            session.delete(department);
 
             session.getTransaction().commit();
             System.out.println("Done!");
-
-
-        } finally {
+        }
+        finally {
+            session.close();
             factory.close();
         }
     }
