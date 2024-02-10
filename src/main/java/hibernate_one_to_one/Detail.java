@@ -3,21 +3,21 @@ package hibernate_one_to_one;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "details_one_to_one")
+@Table(name = "details")
 public class Detail {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
-    @Column(name="city")
+    @Column(name = "city")
     private String city;
 
-    @Column(name="phone_number")
+    @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
 
     @OneToOne(mappedBy = "empDetail", cascade = CascadeType.ALL)

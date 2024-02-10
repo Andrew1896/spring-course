@@ -13,15 +13,15 @@ public class Test5 {
         try {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
-//            Employee emp = session.get(Employee.class, 1);
-//            session.delete(emp);
+            Employee emp = session.get(Employee.class, 7);
+            session.delete(emp);
 
-            session.createQuery("delete Employee" +
-                    "where firstName = 'Alexandr'").executeUpdate();
-
+//            session.createQuery("delete Employee " +
+//                    "where firstName = 'Oleg'").executeUpdate();
+//            session.createQuery("delete Employee " +
+//                    "where salary = 850").executeUpdate();
 
             session.getTransaction().commit();
-
             System.out.println("Done!");
 
         } finally {

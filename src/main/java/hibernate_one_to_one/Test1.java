@@ -15,11 +15,13 @@ public class Test1 {
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
-        Session session = factory.getCurrentSession();
+//        Session session = factory.getCurrentSession();
         try {
-//            Employee employee = new Employee("Zaur", "Trigulov", "IT", 500);
-//            Detail details = new Detail("Baku", "07954875", "zaurtrigulov@gmail.com");
-//            employee.setEmpDetail(details);
+                    Session session = factory.getCurrentSession();
+
+            Employee employee = new Employee("Andrei", "Cataraga", "IT", 800);
+            Detail detail = new Detail("Chisinau", "07954875", "andreicataraga@gmail.com");
+            employee.setEmpDetail(detail);
 //            session.beginTransaction();
 //            session.save(employee);
 //            session.getTransaction().commit();
@@ -30,24 +32,24 @@ public class Test1 {
 //            Detail details1 = new Detail("Roma", "068746594", "elena@gmail.com");
 //            employee1.setEmpDetail(details1);
             session.beginTransaction();
-//            session.save(employee1);
+            session.save(employee);
 //            session.getTransaction().commit();
 //            System.out.println("Done!");
 
             // Assuming you have a Hibernate Session object named 'session'
-            Query<Employee> query = session.createQuery("from Employee", Employee.class);
-            List<Employee> employees = query.getResultList();
+//            Query<Employee> query = session.createQuery("from Employee", Employee.class);
+//            List<Employee> employees = query.getResultList();
+//
+//            for (Employee emplo : employees) {
+//                System.out.println(emplo);
+//            }
 
-            for (Employee emplo : employees) {
-                System.out.println(emplo);
-            }
-
-            session = factory.getCurrentSession();
+//            session = factory.getCurrentSession();
 //            session.beginTransaction();
-            Employee employee2 = session.get(Employee.class, 9);
-            System.out.println(employee2.getEmpDetail());
-            session.getTransaction().commit();
-            System.out.println("Done!");
+//            Employee employee2 = session.get(Employee.class, 9);
+//            System.out.println(employee2.getEmpDetail());
+//            session.getTransaction().commit();
+//            System.out.println("Done!");
 
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
@@ -56,14 +58,14 @@ public class Test1 {
 //            session.getTransaction().commit();
 //            System.out.println("Done!");
 
-            session = factory.getCurrentSession();
-            session.beginTransaction();
-            Employee employee = session.get(Employee.class, 9);
-            session.delete(employee);
+//            session = factory.getCurrentSession();
+//            session.beginTransaction();
+//            Employee employee = session.get(Employee.class, 9);
+//            session.delete(employee);
             session.getTransaction().commit();
             System.out.println("Done!");
         } finally {
-            session.close();
+//            session.close();
             factory.close();
         }
     }

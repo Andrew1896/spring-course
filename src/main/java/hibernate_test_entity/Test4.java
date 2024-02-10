@@ -13,13 +13,12 @@ public class Test4 {
         try {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
-//            Employee emp = session.get(Employee.class, 1);
-//            emp.setSalary(1500);
+            Employee emp = session.get(Employee.class, 1);
+            emp.setSalary(1500);
             session.createQuery("update Employee set salary=1000" +
-                    "where firstName = 'Alexandr'").executeUpdate();
+                    "where firstName = 'Andrei'").executeUpdate();
 
             session.getTransaction().commit();
-
             System.out.println("Done!");
 
         } finally {

@@ -3,7 +3,6 @@ package hibernate_test_entity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 import java.util.List;
 
 public class Test3 {
@@ -16,8 +15,8 @@ public class Test3 {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            List<Employee> emps = session.createQuery("from Employee" +
-                            "where name = 'Alexandr' AND salary>650")
+            List<Employee> emps = session.createQuery("from Employee " +
+                            "where firstName = 'Andrei' ")
                     .getResultList();
 
             for (Employee e : emps)
